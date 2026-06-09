@@ -2,18 +2,18 @@ public class simulador_tarifa
 {
     public static void Main(string[] args)
     {
-        string nombre;
-        double distancia, tarfibase, costokm, subtotal, descuento, tarifafinal;
+        string nombre, nombreVehiculo;
+        double distancia, tarfibase, costokm, subtotal, tarifafinal, descuento = 0.0;
         int hora, tipoVehiculo;
-        bool esHoraPico;
+        bool esHoraPico = false;
         Console.WriteLine("-------------------");
         Console.WriteLine("Simulador de Tarifa");
         Console.WriteLine("-------------------");
         //entrado de datos
 
-        Console.Write("nombre del pasajero: ");
+        Console.WriteLine("nombre del pasajero: ");
         nombre = Console.ReadLine();
-        Console.Write("ingrese distancia del viaje (km): ");
+        Console.WriteLine("ingrese distancia del viaje (km): ");
          distancia = double.Parse(Console.ReadLine());
         Console.WriteLine("hora de salida(0 hrs-23hrs): ");
          hora = int.Parse(Console.ReadLine());
@@ -23,7 +23,7 @@ public class simulador_tarifa
     Console.WriteLine("3. premium");
     Console.WriteLine("4. moto");
     Console.Write("ingrese la opcion: ");
-    int tipoVehiculo = int.Parse(Console.ReadLine());
+    tipoVehiculo = int.Parse(Console.ReadLine());
 
         //proceso
         switch (tipoVehiculo)
@@ -50,6 +50,9 @@ public class simulador_tarifa
                 break;
             default:
                 Console.WriteLine("Opción no válida, se asignará tarifa económica por defecto.");
+                 nombreVehiculo = "Económico";
+                tarfibase = 2.0;
+                costokm = 1.5;
     
                 break;
         }
@@ -72,7 +75,7 @@ public class simulador_tarifa
         tarifafinal = Math.Round(tarifafinal, 2);
         //salida
         Console.WriteLine("-------------------");
-        Console.WriteLine("Simulador de Tarifa");
+        Console.WriteLine("SIMULADOR DE TARIFA");
         Console.WriteLine("-------------------");
         Console.WriteLine($"Pasajero: " + nombre);
         Console.WriteLine($"Tipo de vehículo: " + nombreVehiculo);
@@ -87,11 +90,14 @@ public class simulador_tarifa
         {
             Console.WriteLine("Descuento: No aplica");
         }
-        Console.WriteLine("--------------------------------------");
-        Console.WriteLine("Tarifa final: s/ " + tarifafinal);
-        Console.WriteLine("--------------------------------------");
+        Console.WriteLine("######################################3");
+        Console.WriteLine("TARIFA FIANL: s/ " + tarifafinal);
+        Console.WriteLine("#######################################");
     }
         
+
+
+}
        
 
     
